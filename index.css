@@ -1,3 +1,6 @@
+.container-fluid {
+    padding: 0;
+}
 .welcome-message {
     position: absolute;
     margin-top: 3vh;
@@ -15,6 +18,8 @@
 
 .block {
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .body-content {
     margin: 50px 0 50px 0;
@@ -48,5 +53,5 @@
     position: absolute;
     color: white;
     padding-top: 2vh;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
