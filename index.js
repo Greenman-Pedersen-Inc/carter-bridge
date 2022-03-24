@@ -1,7 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     let titleElement = document.getElementsByTagName('title')[0];
     let title = titleElement.innerText;
-    console.log(title);
     const nav = `<div class="navbar-wrapper">
         <div class="navbar-content">
             <div class="tt">
@@ -24,5 +23,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let barnav = document.querySelector('nav[role="navigation"]');
     barnav.innerHTML = nav;
-    // alert('working');
 });
