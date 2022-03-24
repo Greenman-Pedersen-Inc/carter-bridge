@@ -7,6 +7,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 <img class="img-fluid" src="../pub/media/Banner_1_.png" />
             </div>
             <div>
+            <div class="header-title">
+                <span>Carter Bridge / Brooks St Interchange Project Portal​</span>
+                </div>
                 <img class="img-fluid color-block" src="../pub/media/Banner_2.png" />
                 <div class="welcome-message">
                     <span class="welcome-title">${title}</span>

@@ -44,3 +44,9 @@
     height: 600px;
     border-radius: 50%;
 }
+.header-title {
+    position: absolute;
+    color: white;
+    padding-top: 2vh;
+    font-size: 1.5rem;
+}
