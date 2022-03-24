@@ -1,0 +1,46 @@
+.welcome-message {
+    position: absolute;
+    margin-top: 3vh;
+}
+.welcome-title {
+    font-size: 2rem;
+}
+
+.color-block {
+    background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
+}
+.row {
+    row-gap: 25px;
+}
+
+.block {
+    text-align: center;
+}
+.body-content {
+    margin: 50px 0 50px 0;
+}
+
+.icons {
+    border-radius: 20px;
+}
+
+.navbar-content {
+    display: flex;
+}
+.footer {
+    padding-top: 50px;
+}
+.footer-inner {
+    text-align: center;
+}
+.block-title a {
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.map-holder {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+}
