@@ -51,17 +51,21 @@
 .Mobile {
     display: none;
 }
+.welcome-title {
+    font-weight: 500;
+}
 @media only screen and (max-width: 600px) {
     .welcome-message {
         position: absolute;
         margin-top: 9vh;
     }
 
-    .pp {
+    .banner-second {
         display: none;
     }
     .Mobile {
         display: block;
+        width: 100%;
     }
     .navbar-container {
         text-align: center;
@@ -70,7 +74,7 @@
         height: 7vh;
         background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
     }
-    .tt {
+    .banner-first {
         display: none;
     }
 }
