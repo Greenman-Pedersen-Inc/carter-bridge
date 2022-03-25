@@ -25,7 +25,6 @@
 .icons {
     border-radius: 20px;
 }
-
 .navbar-content {
     display: flex;
 }
@@ -45,4 +44,33 @@
     width: 600px;
     height: 600px;
     border-radius: 50%;
+}
+.navbar-container {
+    padding-bottom: 5vh;
+}
+.Mobile {
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .welcome-message {
+        position: absolute;
+        margin-top: 9vh;
+    }
+
+    .pp {
+        display: none;
+    }
+    .Mobile {
+        display: block;
+    }
+    .navbar-container {
+        text-align: center;
+    }
+    .navbar-content {
+        height: 7vh;
+        background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
+    }
+    .tt {
+        display: none;
+    }
 }
