@@ -1,6 +1,3 @@
-.container-fluid {
-    padding: 0;
-}
 .welcome-message {
     position: absolute;
     margin-top: 3vh;
@@ -8,21 +5,7 @@
 .welcome-title {
     font-size: 2rem;
 }
-.tt {
-    background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
-    width: 100%;
-    height: 3vmax;
-}
-.img-container img {
-    position: absolute;
-    max-height: 9vw;
-    padding: 10px;
-    z-index: 1;
-}
-.nav-holder {
-    width: 100%;
-    height: 200px;
-}
+
 .color-block {
     background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
 }
@@ -32,8 +15,6 @@
 
 .block {
     text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 .body-content {
     margin: 50px 0 50px 0;
@@ -62,10 +43,4 @@
     width: 600px;
     height: 600px;
     border-radius: 50%;
-}
-.header-title {
-    position: absolute;
-    color: white;
-    padding-top: 2vh;
-    font-size: 1.2rem;
 }
