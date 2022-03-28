@@ -3,6 +3,9 @@ window.addEventListener('DOMContentLoaded', () => {
     let title = titleElement.innerText;
     const nav = `<div class="navbar-wrapper">
         <div class="navbar-content">
+        <div class="banner-mobile">
+                <img class="img-fluid banner-first-mobile" src="../pub/media/transportationlogo.png">
+            </div>
         <div class="welcome-message Mobile">
                     <span class="welcome-title">${title}</span>
                 </div>
@@ -24,7 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
     </div>`;
-
     let barnav = document.querySelector('nav[role="navigation"]');
     barnav.innerHTML = nav;
 });
