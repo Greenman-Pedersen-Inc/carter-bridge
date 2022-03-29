@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const nav = `<div class="navbar-wrapper">
         <div class="navbar-content">
         <div class="banner-mobile">
-        <a href="index.html">
+        <a href="/index.html">
                 <img class="img-fluid banner-first-mobile" src="../pub/media/transportationlogo.png">
                 </a>
             </div>
