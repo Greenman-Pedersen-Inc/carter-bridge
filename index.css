@@ -49,7 +49,7 @@ h4 {
 .img-holder,
 .disabled {
     border-radius: 20px;
-    background-color: gray;
+    background-color: black;
 }
 .block {
     display: flex;
