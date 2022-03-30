@@ -1,12 +1,14 @@
 .welcome-message {
     position: absolute;
-    margin-top: 3vh;
+    top: 1vh;
+    color: white;
 }
 .banner-mobile {
     display: none;
 }
 .welcome-title {
     font-size: clamp(15px, 2vw, 30px);
+    font-weight: 400;
 }
 .color-block {
     background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
@@ -23,7 +25,7 @@ container-f {
     row-gap: 25px;
 }
 .disabled {
-    opacity: 0.3;
+    opacity: 1;
 }
 .containerBox {
     position: relative;
@@ -48,7 +50,7 @@ h4 {
 }
 .img-holder,
 .disabled {
-    border-radius: 20px;
+    /* border-radius: 20px; */
     background-color: black;
 }
 .block {
@@ -57,26 +59,41 @@ h4 {
     text-align: center;
 }
 .body-content {
-    margin: 50px 0 50px 0;
+    /* margin: 50px 0 50px 0; */
+    display: flex;
+    align-items: center;
 }
-
+.contain-all {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .icons {
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 .navbar-content {
     display: flex;
 }
+.copyright {
+    text-align: center;
+    color: white;
+}
 .footer {
-    padding-top: 50px;
+    margin-top: auto;
 }
 .footer-inner {
     text-align: center;
 }
+.block-title {
+    position: absolute;
+    background-image: linear-gradient(to left, rgba(255, 0, 0, 0), #ffc107c0);
+    padding-left: 10px;
+}
 .block-title a {
     font-weight: 500;
-    color: black;
+    color: white;
     text-decoration: none;
-    font-size: clamp(15px, 2vw, 20px);
+    font-size: clamp(15px, 1vw, 20px);
 }
 .map-holder {
     width: 600px;
@@ -84,13 +101,20 @@ h4 {
     border-radius: 50%;
 }
 .navbar-container {
-    padding-bottom: 5vh;
+    /* padding-bottom: 5vh; */
 }
 .Mobile {
     display: none;
 }
-.welcome-title {
-    font-weight: 500;
+.gradient {
+    background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
+}
+.container.copyright p {
+    font-size: clamp(10px, 1vw, 15px);
+}
+.mw {
+    max-width: 275px;
+    height: auto;
 }
 @media only screen and (max-width: 600px) {
     .banner-mobile {
@@ -108,7 +132,7 @@ h4 {
     }
     .welcome-message {
         position: absolute;
-        margin-top: 9vh;
+        /* margin-top: 9vh; */
     }
 
     .banner-second {
@@ -116,7 +140,8 @@ h4 {
     }
     .Mobile {
         display: block;
-        width: 100%;
+        width: 200px;
+        margin-left: 25vw;
     }
     .navbar-container {
         text-align: center;
