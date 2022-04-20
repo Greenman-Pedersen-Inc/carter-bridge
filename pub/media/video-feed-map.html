@@ -1,0 +1,198 @@
+<html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS API for JavaScript Tutorials: Add a point, line, and polygon</title>
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .fp-Video {
+      border: 1px double black;
+      width: 100%;
+      height: 200px;
+    }
+
+    .display {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+    }
+
+    .display>video,
+    object {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script type="text/javascript"
+    src="https://flashphoner.com/downloads/builds/flashphoner_client/wcs_api-2.0/current/flashphoner.js"></script>
+  <script type="text/javascript" src="player-min.js"></script>  
+  <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.23/"></script>
+  <script>
+    const cameraLocations = [
+      {
+        geometry: {
+          type: "point",
+          latitude: 38.354757, //check if the point is longitude and change accordingly
+          longitude: -81.651324, //check if the point is latitude and change accordingly
+        },
+        attributes: {
+          'url': 'rtsp://162.210.14.137:1935/rtplive/CAM038',
+        }
+      },
+      {
+        geometry: {
+          type: "point",
+          latitude: 38.357700, //check if the point is longitude and change accordingly
+          longitude: -81.643005, //check if the point is latitude and change accordingly
+        },
+        attributes: {
+          'url': 'rtsp://162.210.14.137:1935/rtplive/CAM079',
+        }
+      },
+      {
+        geometry: {
+          type: "point",
+          latitude: 38.357018520523624, //check if the point is longitude and change accordingly
+          longitude: -81.64083777706117, //check if the point is latitude and change accordingly
+        }, attributes: {
+          'url': 'rtsp://162.210.14.137:1935/rtplive/CAM014',
+        }
+      }
+    ];
+
+    require([
+      "esri/config",
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/Graphic",
+      "esri/layers/GraphicsLayer",
+      "esri/PopupTemplate"
+    ], function (esriConfig, Map, MapView, Graphic, GraphicsLayer, PopupTemplate) {
+
+      esriConfig.apiKey = "AAPK5d715ea4902c4abf80f987e3a02eec2eq5GeczpP-Cj7iKyBQFkUsrwLVN3GzXr8vfaibe-bEoAJZwAqmEnc-tJqquNdGBbB";
+
+      const map = new Map({
+        basemap: "arcgis-topographic" //Basemap layer service
+      });
+
+      const view = new MapView({
+        map: map,
+        center: [-81.643005, 38.357700], //Longitude, latitude
+        zoom: 16,
+        container: "viewDiv"
+      });
+
+      const graphicsLayer = new GraphicsLayer();
+      map.add(graphicsLayer);
+
+
+      cameraLocations.forEach(location => {
+
+        const simpleMarkerSymbol = {
+          type: "simple-marker",
+          color: [226, 119, 40],  // Orange
+          outline: {
+            color: [255, 255, 255], // White
+            width: 1
+          }
+        };
+
+
+        // Create a polygon geometry
+        const polygon = {
+          type: "polygon",
+          rings: [
+            [
+              [-81.651324, 38.354757],
+              [-81.6512381693156, 38.35529545419932], //Longitude, latitude
+              [-81.65051933733386, 38.35479065350477], //Longitude, latitude
+              [-81.651324, 38.354757] //Longitude, latitude           
+            ],
+            [
+              [-81.643005, 38.357700],
+              [-81.643863308844, 38.357784109970346],
+              [-81.64288698480911, 38.358314128693266],
+              [-81.643005, 38.357700],
+
+            ], [
+              [-81.64083777706117, 38.357018520523624],
+              [-81.64022625837384, 38.35745596033477],
+              [-81.64016188536056, 38.3571026107623],
+              [-81.64083777706117, 38.357018520523624]
+            ]
+          ]
+        };
+
+        const simpleFillSymbol = {
+          type: "simple-fill",
+          color: [227, 139, 79, 0.8],  // Orange, opacity 80%
+          outline: {
+            color: [255, 255, 255],
+            width: 1
+          }
+        };
+
+        const polygonGraphic = new Graphic({
+          geometry: polygon,
+          symbol: simpleFillSymbol,
+        });
+        graphicsLayer.add(polygonGraphic);
+
+        const pointGraphic = new Graphic({
+          geometry: location.geometry,
+          symbol: simpleMarkerSymbol,
+          attributes: location.attributes || {},
+
+          popupTemplate: {
+            // NAME and COUNTY are fields in the service containing the Census Tract (NAME) and county of the feature
+            title: "Camera {COUNTY}",
+            content: function (feature) {
+              console.log(feature.attributes);
+              let mainDiv = document.createElement('div')
+              // mainDiv.setAttribute("onload", "init_api()")
+
+              let videoHolder = document.createElement("div")
+              videoHolder.setAttribute("class", "fp-Video")
+              let videoPlayer = document.createElement("div")
+              videoPlayer.setAttribute("id", "play")
+              videoPlayer.setAttribute("class", "display")
+              let playButton = document.createElement("button")
+              // playButton.setAttribute("onClick","playClick()")
+              playButton.setAttribute("id", "playBtn")
+              playButton.textContent = "Play"
+              mainDiv.append(videoHolder)
+              mainDiv.append(playButton)
+              videoHolder.append(videoPlayer)
+
+              init_api(feature.graphic.attributes.url);
+
+              return mainDiv;
+            }
+          }
+
+        });
+        graphicsLayer.add(pointGraphic);
+
+      })
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>

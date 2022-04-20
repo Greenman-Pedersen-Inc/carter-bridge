@@ -3,15 +3,25 @@
     top: 1vh;
     color: white;
 }
-.banner-mobile {
-    display: none;
-}
 .welcome-title {
-    font-size: clamp(15px, 2vw, 30px);
+    font-size: clamp(15px, 3vw, 30px);
     font-weight: 400;
+    color: white;
+    /* position: absolute; */
+    padding-right: 15px;
+}
+span.welcome-box {
+    display: block;
+    width: 100%;
+    text-align: right;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #c4c4c412);
 }
 .color-block {
     background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
+}
+.navbar-content img {
+    width: 100px;
+    padding: 10px 0 10px 15px;
 }
 .inner {
     position: absolute;
@@ -50,7 +60,6 @@ h4 {
 }
 .img-holder,
 .disabled {
-    /* border-radius: 20px; */
     background-color: black;
 }
 .block {
@@ -59,7 +68,6 @@ h4 {
     text-align: center;
 }
 .body-content {
-    /* margin: 50px 0 50px 0; */
     display: flex;
     align-items: center;
 }
@@ -68,11 +76,17 @@ h4 {
     display: flex;
     flex-direction: column;
 }
-.icons {
-    /* border-radius: 20px; */
+.navbar-container {
+    background: linear-gradient(271deg, rgb(0 47 96) 0%, rgba(19, 55, 105, 1) 100%);
+    margin-bottom: auto;
+}
+.navbar-inner {
+    padding: 0 2% 0 2%;
 }
 .navbar-content {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .copyright {
     text-align: center;
@@ -100,22 +114,23 @@ h4 {
     height: 600px;
     border-radius: 50%;
 }
-.navbar-container {
-    /* padding-bottom: 5vh; */
-}
+
 .Mobile {
     display: none;
 }
 .gradient {
-    background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
+    background: linear-gradient(271deg, rgb(0 47 96) 0%, rgba(19, 55, 105, 1) 100%);
 }
 .container.copyright p {
     font-size: clamp(10px, 1vw, 15px);
 }
-.mw {
-    max-width: 275px;
-    height: auto;
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1700px;
+    }
 }
+
 @media only screen and (max-width: 600px) {
     .banner-mobile {
         display: block;
@@ -132,7 +147,6 @@ h4 {
     }
     .welcome-message {
         position: absolute;
-        /* margin-top: 9vh; */
     }
 
     .banner-second {
@@ -145,10 +159,6 @@ h4 {
     }
     .navbar-container {
         text-align: center;
-    }
-    .navbar-content {
-        height: 7vh;
-        background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
     }
     .banner-first {
         display: none;
