@@ -12,3 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let barnav = document.querySelector('nav[role="navigation"]');
     barnav.innerHTML = nav;
 });
+// removes random &nbsp from top of page
+var el = document.querySelector('body');
+el.innerHTML = el.innerHTML.replace(/&nbsp;/g, '');

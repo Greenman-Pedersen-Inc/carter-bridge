@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS API for JavaScript Tutorials: Add a point, line, and polygon</title>
+  <title>Closures & Detours</title>
   <style>
     html,
     body,
@@ -85,7 +85,15 @@
       const map = new Map({
         basemap: "arcgis-topographic" //Basemap layer service
       });
+// request GeoJson data from USGS remote server
+let url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson";
 
+esriRequest(url, {
+  responseType: "json"
+}).then(function(response){
+  // The requested data
+  let geoJson = response.data;
+});
       const view = new MapView({
         map: map,
         center: [-81.643005, 38.357700], //Longitude, latitude
@@ -189,10 +197,15 @@
     });
 
   </script>
+      <script src="index.js"></script>
+      <script src="footer.js"></script>
+
 </head>
 
 <body>
+  <nav role="navigation" class="navbar-container"></nav>
   <div id="viewDiv"></div>
+  <footer role="footer" class="footer"></footer>
 </body>
 
 </html>
