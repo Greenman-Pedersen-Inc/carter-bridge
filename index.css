@@ -1,3 +1,16 @@
+
+.esri-view-height-less-than-medium .esri-popup__main-container {
+    max-height: unset;
+}
+.esri-view-width-xlarge .esri-popup__main-container {
+    width: unset;
+}
+.esri-component.esri-attribution.esri-widget {
+    display: none;
+}
+.twitter-container{
+    border-left: 2px solid #053163;
+}
 .welcome-message {
     position: absolute;
     top: 1vh;
@@ -9,6 +22,7 @@
     color: white;
     /* position: absolute; */
     padding-right: 15px;
+    margin: 0;
 }
 span.welcome-box {
     display: block;
@@ -77,8 +91,8 @@ h4 {
     flex-direction: column;
 }
 .navbar-container {
-    background: linear-gradient(271deg, rgb(0 47 96) 0%, rgba(19, 55, 105, 1) 100%);
-    margin-bottom: auto;
+    background: linear-gradient(271deg, rgb(0 47 96) 0%, rgb(0, 57, 136) 100%);
+     margin-bottom: auto;
 }
 .navbar-inner {
     padding: 0 2% 0 2%;
@@ -119,11 +133,12 @@ h4 {
     display: none;
 }
 .gradient {
-    background: linear-gradient(271deg, rgb(0 47 96) 0%, rgba(19, 55, 105, 1) 100%);
+    background: linear-gradient(271deg, rgb(0 47 96) 0%, rgb(0, 57, 136) 100%);
 }
 .container.copyright p {
     font-size: clamp(10px, 1vw, 15px);
 }
+
 
 @media (min-width: 1400px) {
     .container {
@@ -132,6 +147,24 @@ h4 {
 }
 
 @media only screen and (max-width: 600px) {
+    .middle {
+        width: unset;
+        overflow-y: overlay;
+        width: 100%;
+    }
+    .esri-component.esri-layer-list.esri-widget.esri-widget--panel {
+        height: 150px;
+    }
+    .esri-component.esri-layer-list.esri-widget.esri-widget--panel.phase-selection{
+        height: unset;
+    }
+    .project-title{
+        order:0;
+        text-align: center;
+    }
+    .project-information{
+        order: 1;
+    }
     .banner-mobile {
         display: block;
     }
@@ -164,3 +197,12 @@ h4 {
         display: none;
     }
 }
+#optionsDiv {
+    background-color: white;
+    color: black;
+    padding: 6px;
+    max-width: 400px;
+    }
+    .esri-view-width-xlarge .esri-popup__main-container {
+        width: 460px;
+    }

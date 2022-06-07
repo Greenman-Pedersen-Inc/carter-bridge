@@ -102,7 +102,7 @@ require(['esri/Map', 'esri/views/MapView', 'esri/layers/FeatureLayer', 'esri/wid
                             if (init_api(camera.URL)) {
                                 return init_api(camera.URL);
                             } else {
-                                alert('video not working');
+                                // alert('video not working');
                             }
 
                             return mainDiv;

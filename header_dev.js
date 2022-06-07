@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let title = titleElement.innerText;
     const nav = `<div class="navbar-wrapper">
         <div class="navbar-content">
-        <a href="index_dev.html">
+        <a href="https://transportation.wv.gov">
         <img src="transportationlogo.png">
         </a>
         <span class="welcome-box"><h1 class="welcome-title">${title}</h1></span>

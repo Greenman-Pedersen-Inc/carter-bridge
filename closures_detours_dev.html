@@ -113,7 +113,7 @@
     }
 
     #myImg {
-        border-radius: 5px;
+        border-radius: px;
         cursor: pointer;
         transition: 0.3s;
     }
@@ -142,7 +142,7 @@
         /* Enable scroll if needed */
         background-color: rgb(0, 0, 0);
         /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgb(0, 0, 0);
         /* Black w/ opacity */
     }
 
@@ -282,7 +282,6 @@
         margin-left: auto;
         margin-right: auto;
         left: 0;
-        right: 0;
         bottom: 0;
         padding: 15px;
         max-height: 300px;
@@ -301,12 +300,26 @@
     .esri-component.esri-layer-list.esri-widget.esri-widget--panel {
         max-height: 250px !important;
     }
+
+    @media only screen and (max-width: 600px) {
+        /* div#phaseFormBox {
+            display: none;
+        } */
+
+        .esri-ui-bottom-right.esri-ui-corner {
+            display: none;
+        }
+    }
 </style>
 
 <body>
     <nav role="navigation" class="navbar-container"></nav>
 
     <div id="viewDiv"></div>
+    <div id="optionsDiv" class="esri-widget">
+
+
+    </div>
     <footer role="footer" class="footer"></footer>
 </body>
 
@@ -315,35 +328,35 @@
 <script>
 
 
-    let slideIndex = 1;
-    showSlides(slideIndex);
+    // let slideIndex = 1;
+    // showSlides(slideIndex);
 
-    function plusSlides(n) {
-        showSlides((slideIndex += n));
-    }
+    // function plusSlides(n) {
+    //     showSlides((slideIndex += n));
+    // }
 
-    function currentSlide(n) {
-        showSlides((slideIndex = n));
-    }
+    // function currentSlide(n) {
+    //     showSlides((slideIndex = n));
+    // }
 
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName('mySlides');
-        let dots = document.getElementsByClassName('dot');
-        if (n > slides.length) {
-            slideIndex = 1;
-        }
-        if (n < 1) {
-            slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = 'none';
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(' active', '');
-        }
-        slides[slideIndex - 1].style.display = 'block';
-        dots[slideIndex - 1].className += ' active';
+    // function showSlides(n) {
+    //     let i;
+    //     let slides = document.getElementsByClassName('mySlides');
+    //     let dots = document.getElementsByClassName('dot');
+    //     if (n > slides.length) {
+    //         slideIndex = 1;
+    //     }
+    //     if (n < 1) {
+    //         slideIndex = slides.length;
+    //     }
+    //     for (i = 0; i < slides.length; i++) {
+    //         slides[i].style.display = 'none';
+    //     }
+    //     for (i = 0; i < dots.length; i++) {
+    //         dots[i].className = dots[i].className.replace(' active', '');
+    //     }
+    //     slides[slideIndex - 1].style.display = 'block';
+    //     dots[slideIndex - 1].className += ' active';
+    // }
 
-    }
 </script>
