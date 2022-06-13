@@ -136,13 +136,14 @@ require([
                     <a class="next" onclick="plusSlides(1)">❯</a>
                 </div>
                 <br>
-                <div id="dot-controls" tyle="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
+               
             </div>
         `;
+        // <div id="dot-controls" style="text-align:center">
+        //     <span class="dot" onclick="currentSlide(1)"></span>
+        //     <span class="dot" onclick="currentSlide(2)"></span>
+        //     <span class="dot" onclick="currentSlide(3)"></span>
+        // </div>
 
         attachPoint.append(this.domNode);
 
@@ -176,6 +177,18 @@ require([
                     carouselPhaseDescription:
                         'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
                 },
+                {
+                    carouselImgSrc: 'detour2.png',
+                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
+                },
+                {
+                    carouselImgSrc: 'detour3.png',
+                    carouselPhaseTitle: 'Detour 3',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
+                },
             ],
         },
         1: {
@@ -196,18 +209,6 @@ require([
                     carouselPhaseTitle: 'Detour 1',
                     carouselPhaseDescription:
                         'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
-                },
-                {
-                    carouselImgSrc: 'detour2.png',
-                    carouselPhaseTitle: 'Detour 2',
-                    carouselPhaseDescription:
-                        'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
-                },
-                {
-                    carouselImgSrc: 'detour3.png',
-                    carouselPhaseTitle: 'Detour 3',
-                    carouselPhaseDescription:
-                        'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
                 },
             ],
         },
@@ -261,17 +262,23 @@ require([
                     <h2 class="esri-widget__heading" role="heading" aria-level="3"></h2>
                     <div class="informationInner row">
                         <div class="col-md-6">
-                            <img class="img-fluid" src="${content ? content.detourImageSrc : ''}"></img>
+                            <img class="img-fluid" src="${
+                                content ? content.detourImageSrc : phaseInformation.current.detourImageSrc
+                            }"></img>
                         </div>
 
                         <div class="col-md-6">
                             <div class="descriptionBox">
                                 <div style="font-weight:bold;">${
-                                    content ? content.phaseHeaderInnerHTML : 'no content for this phase'
+                                    content ? content.phaseHeaderInnerHTML : 'Phase #'
                                 }</div>
                                     <br>
                                     <p class="description">
-                                        ${content ? content.phaseDescriptionInnerHTML : 'no content for this phase'}
+                                        ${
+                                            content
+                                                ? content.phaseDescriptionInnerHTML
+                                                : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore'
+                                        }
                                         <br>
                                         <br>
                                         Please click the image for more information on the detour.
