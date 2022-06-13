@@ -100,101 +100,144 @@ require([
         addLayers('currentPhase');
     }
 
-    function CarouselPopup(content) {
-        // Object.defineProperty(this, 'visible', {
-        //     get() {
-        //         return this._visible;
-        //     },
-        //     set(value) {
-        //         this._visible = value;
-        //         if (value) {
-        //             menuRoot.style.display = 'block';
-        //         } else {
-        //             menuRoot.style.display = 'none';
-        //         }
-        //     },
-        //     enumerable: false,
-        //     configurable: false,
-        // });
-        let widgetRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
-        let carouselRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
+    function CarouselPopup(attachPoint, content) {
+        const self = this;
+        // let modal = document.getElementById('myModal');
+        // let img = document.getElementById('detourImg');
+        // let widgetRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
+        // let carouselRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
+        // let modal = document.getElementById('myModal');
 
-        let menuRoot = document.createElement('div');
-        menuRoot.className = 'esri-component esri-widget esri-widget--panel';
-        menuRoot.innerHTML = `<div class="phaseFormBox esri-component esri-widget esri-widget--panel middle">
-            <div>
-                <h2 class="esri-widget__heading" id="phase_header" role="heading" aria-level="3">${content.phaseHeaderInnerHTML}</h2>
-            <div class="informationInner row">
-            <div class="col-md-6">
-            <img id="detourImg" class="img-fluid" src="${content.carouselImgSrc}"></img>
-            </div>
+        // modal.style.display = 'block';
 
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <div id="caption"></div>
-
-                <div id="carousel-contaier" class="slideshow-container">
-                <div id="slideshow-one" class="mySlides" style="display:block">
-                    <img  class="modal-content" src="detour1.png" style="width:100%">
-                    <div class="text pt-5">Detour 1</div>
-                    <p id="popup-description-one" style="color:white;text-align:center">Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.</p>
-                </div>
-
-                <div id="slideshow-two" class="mySlides ">
-                    <img  class="modal-content" src="detour2.png" style="width:100%">
-                    <div class="text pt-5">Detour 2</div>
-                    <p style="color:white;text-align:center">Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.</p>
-                </div>
-
-                <div id="slideshow-three" class="mySlides ">
-                    <img class="modal-content" src="detour3.png" style="width:100%">
-                    <div class="text pt-5">Detour 3</div>
-                    <p style="color:white;text-align:center">Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.</p>
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-            </div>
-            <br>
-
-            <div id="dot-controls" tyle="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
-                
-            </div>
-
-            <div class="col-md-6">
-                    <div class="descriptionBox">
-                    <div style="font-weight:bold;">Description of closure</div>
-                    <br>
-                    <p class="description" id="phase_description">
-                    ${content.phaseDescriptionInnerHTML}623
-                    <br>
-                    <br>
-                    ${content.popupDescriptionSlideOneInnerHTML}
-                    <br>
-                    <br>
-                    Please click the image for more information on the detour.
+        function Slide(attachPoint, content, display = false) {
+            const slide = document.createElement('div');
+            slide.innerHTML = `
+                <div class="mySlides" style="display:${display ? 'block' : 'hidden'}">
+                    <img class="modal-content" src="${content.carouselImgSrc}" style="width:100%">
+                    <div class="text pt-5">${content.carouselPhaseTitle}</div>
+                    <p style="color:white;text-align:center">
+                        ${content.carouselPhaseDescription}
                     </p>
-                    </div>
-                    </div>
-                    </div>
+                </div>
+             `;
+
+            attachPoint.append(slide);
+        }
+
+        this.domNode = document.createElement('div');
+        this.domNode.className = 'esri-component esri-widget esri-widget--panel';
+        this.domNode.innerHTML = `
+            <div class="modal">
+                <span class="close">&times;</span>
+                <div></div>
+                <div class="carousel-contaier slideshow-container">
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+                <br>
+                <div id="dot-controls" tyle="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </div>
-            </div>
-            </div>`;
+        `;
 
-        widgetRoot.append(menuRoot);
+        attachPoint.append(this.domNode);
 
-        var modal = document.getElementById('myModal');
+        let slideContainer = this.domNode.querySelector('.carousel-contaier.slideshow-container');
+        content.forEach((slide, index) => {
+            new Slide(slideContainer, slide, index === 0);
+        });
 
-        var img = document.getElementById('detourImg');
+        let span = document.getElementsByClassName('close')[0];
+
+        // let carouselPopup = modal.append(carouselRoot);
+        span.onclick = function () {
+            self.domNode.innerHTML = '';
+            self.domNode.style.display = 'none';
+            self.domNode.innerHTML = '';
+        };
+
+        // attachPoint.append(widgetRoot);
     }
+
+    const phaseInformation = {
+        current: {
+            detourImageSrc: 'detour1.png',
+            phaseHeaderInnerHTML: 'Current Phase',
+            phaseDescriptionInnerHTML:
+                ' Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.',
+            slides: [
+                {
+                    carouselImgSrc: 'detour1.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
+                },
+            ],
+        },
+        1: {
+            phaseHeaderInnerHTML: 'Phase 1',
+            detourImageSrc: 'detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `
+            Phase 1 Closure. Washington Street On-Ramp Closed and right lane closure on I-64E.
+            <br>
+            <br>
+            Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road.
+            Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.
+            <br>
+            <br>
+            Please click the image for more information on the detour.`,
+            slides: [
+                {
+                    carouselImgSrc: 'detour1.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
+                },
+                {
+                    carouselImgSrc: 'detour2.png',
+                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
+                },
+                {
+                    carouselImgSrc: 'detour3.png',
+                    carouselPhaseTitle: 'Detour 3',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
+                },
+            ],
+        },
+        4: {
+            phaseHeaderInnerHTML: 'Phase 4',
+            detourImageSrc: 'detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.`,
+        },
+        15: {
+            phaseHeaderInnerHTML: 'Phase 15',
+            detourImageSrc: 'detourPhaseImg.png',
+            phaseDescriptionInnerHTML: 'Description about Phase 15 closures will update in this field.',
+        },
+        18: {
+            phaseHeaderInnerHTML: 'Phase 18',
+            detourImageSrc: 'detourPhaseImg.png',
+            phaseDescriptionInnerHTML: 'Description about Phase 18 closures will update in this field.',
+        },
+        23: {
+            phaseHeaderInnerHTML: 'Phase 23',
+            detourImageSrc: 'detourPhaseImg.png',
+            phaseDescriptionInnerHTML: 'Description about Phase 23 closures will update in this field.',
+        },
+    };
 
     function InfoPopup(content, initiallyVisible) {
         let widgetRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
-        let carouselRoot = document.querySelector('esri-component esri-widget.esri-widget--panel');
+        // let carouselRoot = document.querySelector('.esri-component.esri-widget.esri-widget--panel');
+        // let carouselContent = document.createElement('div');
+        let menuRoot = document.createElement('div');
 
         Object.defineProperty(this, 'visible', {
             get() {
@@ -212,94 +255,44 @@ require([
             configurable: false,
         });
 
-        new CarouselPopup(content.slides);
+        menuRoot.innerHTML = `
+            <div class="phaseFormBox esri-component esri-widget esri-widget--panel middle">
+                <div>
+                    <h2 class="esri-widget__heading" role="heading" aria-level="3"></h2>
+                    <div class="informationInner row">
+                        <div class="col-md-6">
+                            <img class="img-fluid" src="${content ? content.detourImageSrc : ''}"></img>
+                        </div>
 
-        let menuRoot = document.createElement('div');
-        menuRoot.className = 'esri-component esri-widget esri-widget--panel';
-        menuRoot.innerHTML = `<div class="phaseFormBox esri-component esri-widget esri-widget--panel middle">
-            <div>
-                <h2 class="esri-widget__heading" id="phase_header" role="heading" aria-level="3">${content.phaseHeaderInnerHTML}</h2>
-            <div class="informationInner row">
-            <div class="col-md-6">
-            <img id="detourImg" class="img-fluid" src="detour1.png"></img>
-            </div>
-
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <div id="caption"></div>
-
-                <div id="carousel-contaier" class="slideshow-container">
-                <div id="slideshow-one" class="mySlides" style="display:block">
-                    <img  class="modal-content" src="detour1.png" style="width:100%">
-                    <div class="text pt-5">Detour 1</div>
-                    <p id="popup-description-one" style="color:white;text-align:center">Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.</p>
-                </div>
-
-                <div id="slideshow-two" class="mySlides ">
-                    <img  class="modal-content" src="detour2.png" style="width:100%">
-                    <div class="text pt-5">Detour 2</div>
-                    <p style="color:white;text-align:center">Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.</p>
-                </div>
-
-                <div id="slideshow-three" class="mySlides ">
-                    <img class="modal-content" src="detour3.png" style="width:100%">
-                    <div class="text pt-5">Detour 3</div>
-                    <p style="color:white;text-align:center">Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.</p>
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-            </div>
-            <br>
-
-            <div id="dot-controls" tyle="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
-                
-            </div>
-
-            <div class="col-md-6">
-                    <div class="descriptionBox">
-                    <div style="font-weight:bold;">Description of closure</div>
-                    <br>
-                    <p class="description" id="phase_description">
-                    ${content.phaseDescriptionInnerHTML}623
-                    <br>
-                    <br>
-                    ${content.popupDescriptionSlideOneInnerHTML}
-                    <br>
-                    <br>
-                    Please click the image for more information on the detour.
-                    </p>
+                        <div class="col-md-6">
+                            <div class="descriptionBox">
+                                <div style="font-weight:bold;">${
+                                    content ? content.phaseHeaderInnerHTML : 'no content for this phase'
+                                }</div>
+                                    <br>
+                                    <p class="description">
+                                        ${content ? content.phaseDescriptionInnerHTML : 'no content for this phase'}
+                                        <br>
+                                        <br>
+                                        Please click the image for more information on the detour.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                    </div>
-            </div>
-            </div>
+                </div>
             </div>`;
-
         widgetRoot.append(menuRoot);
 
-        var modal = document.getElementById('myModal');
+        menuRoot.querySelector('.img-fluid').addEventListener('click', function () {
+            let carouselRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
 
-        var img = document.getElementById('detourImg');
-        var modalImg = document.getElementById('img01');
-        var captionText = document.getElementById('caption');
-        img.onclick = function () {
-            modal.style.display = 'block';
-            // modalImg.src = this.src;
-            // captionText.innerHTML = this.alt;
-        };
-        var span = document.getElementsByClassName('close')[0];
-        span.onclick = function () {
-            modal.style.display = 'none';
-        };
+            if (content && content.slides) {
+                new CarouselPopup(carouselRoot, content.slides);
+            }
+        });
 
         this.visible = initiallyVisible;
-
-        // let layerVisibleIcon = document.getElementsByClassName('esri-layer-list__item-toggle');
     }
 
     let selectorMenu = document.querySelector('.esri-ui-top-right.esri-ui-corner');
@@ -331,68 +324,6 @@ require([
         console.log('clear widget stuff for phase');
         map.remove();
     });
-
-    const phaseInformation = {
-        current: {
-            detourImageSrc: 'detour1.png',
-            phaseHeaderInnerHTML: 'Current Phase',
-            phaseDescriptionInnerHTML:
-                ' Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.',
-            slides: [
-                {
-                    carouselImgSrc: 'detour1.png',
-                    carouselPhaseTitle: 'Detour 1',
-                    carouselPhaseDescription:
-                        'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
-                },
-                {
-                    carouselImgSrc: 'detour2.png',
-                    carouselPhaseTitle: 'Detour 2',
-                    carouselPhaseDescription:
-                        'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
-                },
-                {
-                    carouselImgSrc: 'detour3.png',
-                    carouselPhaseTitle: 'Detour 3',
-                    carouselPhaseDescription:
-                        'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
-                },
-            ],
-        },
-        1: {
-            phaseHeaderInnerHTML: 'Phase 1',
-            detourImageSrc: 'detourPhaseImg.png',
-            phaseDescriptionInnerHTML: `
-            Phase 1 Closure. Washington Street On-Ramp Closed and right lane closure on I-64E.
-            <br>
-            <br>
-            Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road.
-            Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.
-            <br>
-            <br>
-            Please click the image for more information on the detour.`,
-        },
-        4: {
-            phaseHeaderInnerHTML: 'Phase 4',
-            detourImageSrc: 'detourPhaseImg.png',
-            phaseDescriptionInnerHTML: `Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.`,
-        },
-        15: {
-            phaseHeaderInnerHTML: 'Phase 15',
-            detourImageSrc: 'detourPhaseImg.png',
-            phaseDescriptionInnerHTML: 'Description about Phase 15 closures will update in this field.',
-        },
-        18: {
-            phaseHeaderInnerHTML: 'Phase 18',
-            detourImageSrc: 'detourPhaseImg.png',
-            phaseDescriptionInnerHTML: 'Description about Phase 18 closures will update in this field.',
-        },
-        23: {
-            phaseHeaderInnerHTML: 'Phase 23',
-            detourImageSrc: 'detourPhaseImg.png',
-            phaseDescriptionInnerHTML: 'Description about Phase 23 closures will update in this field.',
-        },
-    };
 
     function addLayers(phasePeriod) {
         map.removeAll();
@@ -438,27 +369,6 @@ require([
             layer.watch('visible', (newValue, oldValue, property, target) => {
                 layer.infoPopup.visible = newValue;
             });
-
-            // const displayblock = document.getElementById('phaseFormBox');
-            // const phaseDescription = document.getElementById('phase_description');
-            // const phaseHeader = document.getElementById('phase_header');
-            // const popupDescriptionSlideOne = document.getElementById('popup-description-one');
-
-            // const slideShowContainerTwo = document.getElementById('slideshow-two');
-            // const slideShowContainerThree = document.getElementById('slideshow-three');
-            // const slideShowDotNavigation = document.getElementById('dot-controls');
-            // const detourImage = document.getElementById('detourImg');
-
-            // detourImage.src = 'detour1.png';
-            // displayblock.style.display = 'block';
-            // phaseHeader.innerHTML = 'Current Phase';
-            // phaseDescription.innerHTML =
-            //     ' Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.';
-            // popupDescriptionSlideOne.innerHTML =
-            //     'Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.';
-            //     slideShowContainerTwo.remove();
-            //     slideShowContainerThree.remove();
-            //     slideShowDotNavigation.remove();
 
             map.add(layer);
             layer.infoPopup = new InfoPopup(phaseInformation['current'], true);
@@ -603,6 +513,8 @@ require([
 
                         if (phaseInformation[phase]) {
                             layer.infoPopup = new InfoPopup(phaseInformation[phase], layer.visible);
+                        } else {
+                            layer.infoPopup = new InfoPopup(null, layer.visible);
                         }
 
                         function visibilityWatchHandler(newValue, oldValue, property, target) {
@@ -621,6 +533,7 @@ require([
                             }
                             // updatePopup(phase, layers.map((layer) => layer.visible).includes(true));
                         }
+                        // layer.infoPopup = new InfoPopup(phaseInformation['current'], true);
 
                         visibilityWatchers.push(layer.watch('visible', visibilityWatchHandler));
 

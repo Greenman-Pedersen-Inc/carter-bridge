@@ -166,7 +166,9 @@ h4 {
     padding: 15px;
     max-height: 300px;
 }
-
+.phaseFormBox {
+    width: 500px !important;
+}
 @media (min-width: 1400px) {
     .container {
         max-width: 1700px;
