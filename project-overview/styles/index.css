@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 85vh;
+}
+
+.body-content {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1700px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .middle {
+        width: unset;
+        overflow-y: overlay;
+        width: 100%;
+    }
+    .esri-component.esri-layer-list.esri-widget.esri-widget--panel {
+        height: 150px;
+    }
+    .esri-component.esri-layer-list.esri-widget.esri-widget--panel.phase-selection {
+        height: unset;
+    }
+    .project-title {
+        order: 0;
+        text-align: center;
+    }
+    .project-information {
+        order: 1;
+    }
+    .banner-mobile {
+        display: block;
+    }
+    img.img-fluid.banner-first-mobile {
+        height: 6vh;
+        padding-top: 1vh;
+    }
+    .banner-first-mobile img {
+        text-align: center;
+        max-width: 100%;
+        height: 6vh;
+        padding-top: 1vh;
+    }
+    .welcome-message {
+        position: absolute;
+    }
+
+    .banner-second {
+        display: none;
+    }
+    .Mobile {
+        display: block;
+        width: 200px;
+        margin-left: 25vw;
+    }
+    .navbar-container {
+        text-align: center;
+    }
+    .banner-first {
+        display: none;
+    }
+}
+#optionsDiv {
+    background-color: white;
+    color: black;
+    padding: 6px;
+    max-width: 400px;
+}
+.esri-view-width-xlarge .esri-popup__main-container {
+    width: 460px;
+}

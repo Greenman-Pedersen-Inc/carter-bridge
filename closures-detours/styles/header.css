@@ -1,0 +1,43 @@
+.navbar-container {
+    height: 10vh;
+    /* background: linear-gradient(271deg, rgb(0 47 96) 0%, rgb(0, 57, 136) 100%); */
+    /* margin-bottom: auto; */
+    background-image: url(../images/gradient-banner.png);
+    background-position: right;
+}
+.navbar-inner {
+    padding: 0 2% 0 2%;
+}
+.navbar-wrapper {
+    border-bottom: 1px solid black;
+    height: 100%;
+}
+.navbar-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+span.welcome-box {
+    display: block;
+    width: 100%;
+    text-align: right;
+    /* background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #c4c4c412); */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2) 100%);
+    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.navbar-content a {
+    height: 100%;
+}
+.navbar-content img {
+    height: 100%;
+    padding: 5px 0 5px 0px;
+}
+@media only screen and (max-width: 600px) {
+    .navbar-container {
+        text-align: center;
+    }
+}
