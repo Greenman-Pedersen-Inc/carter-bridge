@@ -29,19 +29,8 @@ require([
                     carouselImgSrc: 'images/detour1.png',
                     carouselPhaseTitle: 'Detour 1',
                     carouselPhaseDescription:
-                        'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
-                },
-                {
-                    carouselImgSrc: 'images/detour2.png',
-                    carouselPhaseTitle: 'Detour 2',
-                    carouselPhaseDescription:
-                        'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
-                },
-                {
-                    carouselImgSrc: 'images/detour3.png',
-                    carouselPhaseTitle: 'Detour 3',
-                    carouselPhaseDescription:
-                        'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
+                        'Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.',
+                    // carouselPhaseDescription:'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
                 },
             ],
         },
@@ -58,22 +47,89 @@ require([
             `,
             slides: [
                 {
-                    carouselImgSrc: 'images/detour1.png',
+                    carouselImgSrc: 'images/detourPhaseImg.png',
                     carouselPhaseTitle: 'Detour 1',
                     carouselPhaseDescription:
                         'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
+                },
+                {
+                    carouselImgSrc: 'images/detour2.png',
+                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
+                },
+                {
+                    carouselImgSrc: 'images/detour3.png',
+                    carouselPhaseTitle: 'Detour 3',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
                 },
             ],
         },
         4: {
             phaseHeaderInnerHTML: 'Phase 4',
             detourImageSrc: 'images/detourPhaseImg.png',
-            phaseDescriptionInnerHTML: `Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.`,
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `
+                <p>
+                    Washington Street On-Ramp Closed and right lane closure on I-64E.
+                </p>
+                <p>
+                    Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.
+                </p>
+            `,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
+                },
+                {
+                    carouselImgSrc: 'images/detour2.png',
+                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
+                },
+                {
+                    carouselImgSrc: 'images/detour3.png',
+                    carouselPhaseTitle: 'Detour 3',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
+                },
+            ],
         },
         15: {
             phaseHeaderInnerHTML: 'Phase 15',
             detourImageSrc: 'images/detourPhaseImg.png',
-            phaseDescriptionInnerHTML: 'Description about Phase 15 closures will update in this field.',
+            phaseDescriptionInnerHTML: `
+                <p>
+                    Washington Street On-Ramp Closed and right lane closure on I-64E.
+                </p>
+                <p>
+                    Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.
+                </p>
+            `,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
+                },
+                {
+                    carouselImgSrc: 'images/detour2.png',
+                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
+                },
+                {
+                    carouselImgSrc: 'images/detour3.png',
+                    carouselPhaseTitle: 'Detour 3',
+                    carouselPhaseDescription:
+                        'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
+                },
+            ],
         },
         18: {
             phaseHeaderInnerHTML: 'Phase 18',
@@ -163,23 +219,19 @@ require([
         // view.ui.add(layerList, 'top-right');
         addLayers(selectorMenu);
     }
-
-    function visibilityWatchHandler(newValue) {
-        console.log(phase, newValue);
-
-        if (layer.infoPopup) {
-            layer.infoPopup.visible = newValue;
+    function visibilityWatchHandler(newValue, oldValue, attribute, target) {
+        if (target.infoPopup) {
+            target.infoPopup.visible = newValue;
         }
 
         if (newValue) {
-            layers.forEach((target) => {
-                if (target.id !== layer.id) {
-                    target.visible = false;
+            map.layers.items.forEach((layer) => {
+                if (layer.id !== target.id) {
+                    layer.visible = false;
                 }
             });
         }
     }
-
     function addLayers(selector) {
         map.removeAll();
 
@@ -221,44 +273,24 @@ require([
                         visible: false,
                         definitionExpression: `phase = ${phase}`,
                         popupTemplate: {
-                            // autocasts as new PopupTemplate()
-                            title: '{name}',
-                            content: '{comments}',
-                            // Set content elements in the order to display.
-                            // The first element displayed here is the fieldInfos.
+                            title: '{Name}',
                             content: [
                                 {
-                                    // You can also set a descriptive text element. This element
-                                    // uses an attribute from the featurelayer which displays a
-                                    // sentence giving the total amount of trees value within a
-                                    // specified census block. Text elements can only be set within the content.
-                                    type: 'text', // TextContentElement
-                                    text: 'Can have more details here about the phase and detours etc.....',
+                                    type: 'text',
+                                    text: '{Comments}',
                                 },
                                 {
-                                    // You can set a media element within the popup as well. This
-                                    // can be either an image or a chart. You specify this within
-                                    // the mediaInfos. The following creates a pie chart in addition
-                                    // to two separate images. The chart is also set up to work with
-                                    // related tables. Similar to text elements, media can only be set within the content.
-                                    type: 'media', // MediaContentElement
+                                    type: 'media',
                                     mediaInfos: [
                                         {
-                                            // title: '<b>Mexican Fan Palm</b>',
-                                            title: '<b>Detour Start</b>',
+                                            title: '',
+                                            type: 'image',
+                                            caption: '',
                                             value: {
                                                 sourceURL: 'images/detour_start.png',
                                             },
-                                            type: 'image',
                                         },
                                     ],
-                                },
-                                {
-                                    // You can set a attachment element(s) within the popup as well.
-                                    // Similar to text and media elements, attachments can only be set
-                                    // within the content. Any attachmentInfos associated with the feature
-                                    // will be listed in the popup.
-                                    type: 'attachments', // AttachmentsContentElement
                                 },
                             ],
                         },
@@ -354,13 +386,6 @@ require([
     }
     function CarouselPopup(attachPoint, content) {
         const self = this;
-        // let modal = document.getElementById('myModal');
-        // let img = document.getElementById('detourImg');
-        // let widgetRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
-        // let carouselRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
-        // let modal = document.getElementById('myModal');
-
-        // modal.style.display = 'block';
 
         function Slide(attachPoint, content, display = false) {
             const slide = document.createElement('div');
@@ -382,38 +407,27 @@ require([
         this.domNode.innerHTML = `
             <div class="modal">
                 <span class="close">&times;</span>
-                <div></div>
                 <div class="carousel-contaier slideshow-container">
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    <a class="${content.length > 1 ? 'prev' : 'hidden'}" onclick="plusSlides(-1)">❮</a>
+                    <a class="${content.length > 1 ? 'next' : 'hidden'}" onclick="plusSlides(1)">❯</a>
                 </div>
-                <br>
-
             </div>
         `;
-        // <div id="dot-controls" style="text-align:center">
-        //     <span class="dot" onclick="currentSlide(1)"></span>
-        //     <span class="dot" onclick="currentSlide(2)"></span>
-        //     <span class="dot" onclick="currentSlide(3)"></span>
-        // </div>
 
         attachPoint.append(this.domNode);
 
-        let slideContainer = this.domNode.querySelector('.carousel-contaier.slideshow-container');
+        const slideContainer = this.domNode.querySelector('.carousel-contaier.slideshow-container');
+        const span = document.getElementsByClassName('close')[0];
+
         content.forEach((slide, index) => {
             new Slide(slideContainer, slide, index === 0);
         });
 
-        let span = document.getElementsByClassName('close')[0];
-
-        // let carouselPopup = modal.append(carouselRoot);
         span.onclick = function () {
             self.domNode.innerHTML = '';
             self.domNode.style.display = 'none';
             self.domNode.innerHTML = '';
         };
-
-        // attachPoint.append(widgetRoot);
     }
     function InfoPopup(content, phaseNumber, initiallyVisible) {
         let widgetRoot = document.querySelector('.esri-ui-bottom-left.esri-ui-corner');
@@ -472,5 +486,3 @@ require([
         addUIControls(view);
     });
 });
-
-

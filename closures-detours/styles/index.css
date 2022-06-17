@@ -2,11 +2,26 @@ body {
     overflow: hidden;
 }
 
+.hidden {
+    display: none;
+}
+
 .esri-view-height-less-than-medium .esri-popup__main-container {
     max-height: unset;
 }
 .esri-view-width-xlarge .esri-popup__main-container {
     width: unset;
+}
+
+.esri-feature__content-element.esri-feature__text {
+    margin-bottom: 0.5em;
+}
+
+.esri-view-width-xlarge .esri-popup__main-container,
+.esri-view-width-large .esri-popup__main-container,
+.esri-view-width-medium .esri-popup__main-container {
+    max-height: 400px !important;
+    max-width: 400px !important;
 }
 
 .twitter-container {
@@ -25,8 +40,6 @@ body {
     padding-right: 15px;
     margin: 0;
 }
-
-
 
 .color-block {
     background: linear-gradient(180deg, rgba(14, 76, 141, 1) 0%, rgba(19, 55, 105, 1) 100%);
@@ -84,8 +97,6 @@ h4 {
     display: flex;
     flex-direction: column;
 }
-
-
 
 .block-title {
     position: absolute;

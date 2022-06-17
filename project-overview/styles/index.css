@@ -31,13 +31,12 @@ body {
 
 .carousel-caption {
     text-align: left;
-    max-width: 30%;
-    width: 30%;
+    width: clamp(300px, 80vw, 600px);
     background-color: rgba(255, 255, 255, 0.75);
     left: 10vw;
     margin: auto 0;
-    top: 10vh;
-    bottom: 10vh;
+    top: clamp(600px, 40vw, 185px);
+    bottom: clamp(185px, 40vw, 600px);
     border-radius: 5px;
     padding: 1em;
     color: black;
@@ -52,6 +51,7 @@ body {
 }
 .carousel-caption p {
     font-size: clamp(0.6em, 1.3vw, 1.2em);
+    margin-bottom: 0;
 }
 
 @media only screen and (max-width: 600px) {
