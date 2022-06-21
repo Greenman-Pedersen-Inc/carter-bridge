@@ -362,7 +362,6 @@ require([
                 },
             ],
         },
-
         27: {
             detourImageSrc: 'images/detourPhaseImg.png',
             phaseDescriptionInnerHTML: `Brooks St ramp to I-64W/I-77S/Beckley closed. Turn right on Washington St E. Continue on Washington St E. Turn left onto Greenbrier St. Take the I-64E/I-77 ramp.`,
@@ -427,18 +426,90 @@ require([
                 {
                     carouselImgSrc: 'images/detourPhaseImg.png',
                     carouselPhaseTitle: 'Detour 1',
-                    carouselPhaseDescription: 'I-77S right lane closed before and after Brooks St Ramp.',
+                    carouselPhaseDescription: 'I-77S left lane of ramp to I-64E/I-77S/Beckley closed.',
                 },
             ],
         },
-        26: {
+        34: {
             detourImageSrc: 'images/detourPhaseImg.png',
-            phaseDescriptionInnerHTML: `Brooks St ramp to I-64W/I-77S/Beckley closed. Turn right on Washington St E. Continue on Washington St E. Turn left onto Greenbrier St. Take the I-64E/I-77 ramp.`,
+            phaseDescriptionInnerHTML: `I-77S left lane closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77S left lane closed.',
+                },
+            ],
+        },
+        35: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77N left lane closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77N left lane closed.',
+                },
+            ],
+        },
+        36: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77N left lane closed.`,
             slides: [
                 {
                     carouselImgSrc: 'images/detourPhaseImg.png',
                     carouselPhaseTitle: 'Detour 1',
                     carouselPhaseDescription: 'I-77S right lane closed before and after Brooks St Ramp.',
+                },
+            ],
+        },
+        37: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77N right lane closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77N right lane closed.',
+                },
+            ],
+        },
+        38: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77S right lane closed and Exit 100 Leon Sullivan Way off-ramp closed. Continue on I-77S and take Exit 99 State Capitol/Greenbrier St. Keep right at the fork. Turn right onto Greenbrier St. Turn right onto Washington St E. Continue straight until Leon Sullivan Way.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Continue on I-77S and take Exit 99 State Capitol/Greenbrier St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Keep right at the fork. Turn right onto Greenbrier St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Turn right onto Washington St E. Continue straight until Leon Sullivan Way.',
+                },
+            ],
+        },
+        40: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Willow Street Closed. Continue on Pennsylvania Ave. Turn left onto Bigley Avenue then slight left to continue on Bigley Avenue.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Continue on Pennsylvania Ave. Turn left onto Bigley Avenue.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Slight left to continue on Bigley Avenue.',
                 },
             ],
         },
