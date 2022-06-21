@@ -21,7 +21,7 @@ require([
     const phaseInformation = {
         0: {
             detourImageSrc: 'images/detour1.png',
-            phaseHeaderInnerHTML: 'Current Phase',
+            title: 'Current Phase',
             phaseDescriptionInnerHTML:
                 'Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.',
             slides: [
@@ -30,20 +30,13 @@ require([
                     carouselPhaseTitle: 'Detour 1',
                     carouselPhaseDescription:
                         'Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.',
-                    // carouselPhaseDescription:'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
                 },
             ],
         },
         1: {
-            phaseHeaderInnerHTML: 'Phase 1',
             detourImageSrc: 'images/detourPhaseImg.png',
             phaseDescriptionInnerHTML: `
-                <p>
                     Washington Street On-Ramp Closed and right lane closure on I-64E.
-                </p>
-                <p>
-                    Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.
-                </p>
             `,
             slides: [
                 {
@@ -54,30 +47,44 @@ require([
                 },
                 {
                     carouselImgSrc: 'images/detour2.png',
-                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseTitle: 'Detour 1A',
                     carouselPhaseDescription:
                         'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
                 },
                 {
                     carouselImgSrc: 'images/detour3.png',
-                    carouselPhaseTitle: 'Detour 3',
+                    carouselPhaseTitle: 'Detour 1B',
                     carouselPhaseDescription:
                         'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
+                },
+            ],
+        },
+        2: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77S left lane of ramp to I-64E/I-77S/Beckley closed.</p>`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77S left lane of ramp to I-64E/I-77S/Beckley closed.',
+                },
+            ],
+        },
+        3: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77S right lane of ramp to I-64E/I-77S/Beckley closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77S right lane of ramp to I-64E/I-77S/Beckley closed.',
                 },
             ],
         },
         4: {
-            phaseHeaderInnerHTML: 'Phase 4',
             detourImageSrc: 'images/detourPhaseImg.png',
             detourImageSrc: 'images/detourPhaseImg.png',
-            phaseDescriptionInnerHTML: `
-                <p>
-                    Washington Street On-Ramp Closed and right lane closure on I-64E.
-                </p>
-                <p>
-                    Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.
-                </p>
-            `,
+            phaseDescriptionInnerHTML: `Washington Street On-Ramp Closed and right lane closure on I-64E.`,
             slides: [
                 {
                     carouselImgSrc: 'images/detourPhaseImg.png',
@@ -87,29 +94,110 @@ require([
                 },
                 {
                     carouselImgSrc: 'images/detour2.png',
-                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseTitle: 'Detour 1A',
                     carouselPhaseDescription:
                         'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
                 },
                 {
                     carouselImgSrc: 'images/detour3.png',
-                    carouselPhaseTitle: 'Detour 3',
+                    carouselPhaseTitle: 'Detour 1B',
                     carouselPhaseDescription:
                         'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
+                },
+            ],
+        },
+        6: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77N left lane of Exit 101 to I-64W/Huntington closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77N left lane of Exit 101 to I-64W/Huntington closed.',
+                },
+            ],
+        },
+        7: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77S left lane of ramp to I-77N/I-79/Parkersburg.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77S left lane of ramp to I-77N/I-79/Parkersburg.',
+                },
+            ],
+        },
+        8: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77N right lane of Exit 101 to I-64W/Huntington closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77N right lane of Exit 101 to I-64W/Huntington closed.',
+                },
+            ],
+        },
+        9: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-64W left lane past Exit 58C Closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-64W left lane past Exit 58C Closed.',
+                },
+            ],
+        },
+        10: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-64W right lane of Exit 101 I-64W/US-119S/Huntington closed and I-64W right lane past Exit 58C closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'I-64W right lane of Exit 101 I-64W/US-119S/Huntington closed and I-64W right lane past Exit 58C closed.',
+                },
+            ],
+        },
+        11: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Right shoulder of Exit 58C of I-64W closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Right shoulder of Exit 58C of I-64W closed.',
+                },
+            ],
+        },
+        12: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Left shoulder of Exit 58C of I-64W closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Left shoulder of Exit 58C of I-64W closed.',
+                },
+            ],
+        },
+        13: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-64E left lane of Exit 59 I-77N/I-79/Parkersburg closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-64E left lane of Exit 59 I-77N/I-79/Parkersburg closed.',
                 },
             ],
         },
         15: {
-            phaseHeaderInnerHTML: 'Phase 15',
             detourImageSrc: 'images/detourPhaseImg.png',
-            phaseDescriptionInnerHTML: `
-                <p>
-                    Washington Street On-Ramp Closed and right lane closure on I-64E.
-                </p>
-                <p>
-                    Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.
-                </p>
-            `,
+            phaseDescriptionInnerHTML: `Washington Street On-Ramp Closed and right lane closure on I-64E.`,
             slides: [
                 {
                     carouselImgSrc: 'images/detourPhaseImg.png',
@@ -119,27 +207,240 @@ require([
                 },
                 {
                     carouselImgSrc: 'images/detour2.png',
-                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseTitle: 'Detour 1A',
                     carouselPhaseDescription:
                         'Turn left onto Westmoreland Road and then turn right onto Odell Avenue On-Ramp to continue on I-77N.',
                 },
                 {
                     carouselImgSrc: 'images/detour3.png',
-                    carouselPhaseTitle: 'Detour 3',
+                    carouselPhaseTitle: 'Detour 1B',
                     carouselPhaseDescription:
                         'Turn left onto Westmoreland Road and then turn left onto Crescent Road On-Ramp to continue on I-77S.',
                 },
             ],
         },
-        18: {
-            phaseHeaderInnerHTML: 'Phase 18',
+        16: {
             detourImageSrc: 'images/detourPhaseImg.png',
-            phaseDescriptionInnerHTML: 'Description about Phase 18 closures will update in this field.',
+            phaseDescriptionInnerHTML: `I-77S right lane closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77S right lane closed.',
+                },
+            ],
+        },
+        17: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77S right lane closed before and after Brooks St Ramp.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77S right lane closed before and after Brooks St Ramp.',
+                },
+            ],
+        },
+        18: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML:
+                'Court Street on-ramp and right lane of I-77N/I-79/Parkersburg closed. Please take Brooks St Ramp for I-77N. Take Court St down to Lee St. Turn left onto Lee St. Turn left onto Brooks St and continue to take the ramp for I-77N.',
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Please take Brooks St Ramp for I-77N.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Take Court St down to Lee St. Turn left onto Lee St. Turn left onto Brooks St and continue to take the ramp for I-77N.',
+                },
+            ],
+        },
+        19: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML:
+                'I-77S Exit 100 Leon Sullivan Way Off-Ramp Closed. Continue on I-77S and take Exit 99 State Capitol/Greenbrier St. Keep right at the fork. Turn right onto Greenbrier St. Turn right onto Washington St E. Continue straight until Leon Sullivan Way.',
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Continue on I-77S and take Exit 99 State Capitol/Greenbrier St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Keep right at the fork. Turn right onto Greenbrier St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Turn right onto Washington St E. Continue straight until Leon Sullivan Way.',
+                },
+            ],
+        },
+        21: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML:
+                'I-77N Exit 100 Leon Sullivan Way/Capitol St. Off-Ramp Closed. Take Exit 99 State Capitol/Greenbrier St. Turn left onto Greenbrier St. Turn right onto Washington St E. Continue straight until Leon Sullivan Way.',
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Take Exit 99 State Capitol/Greenbrier St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Turn left onto Greenbrier St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Turn right onto Washington St E. Continue straight until Leon Sullivan Way.    ',
+                },
+            ],
         },
         23: {
-            phaseHeaderInnerHTML: 'Phase 23',
             detourImageSrc: 'images/detourPhaseImg.png',
-            phaseDescriptionInnerHTML: 'Description about Phase 23 closures will update in this field.',
+            phaseDescriptionInnerHTML:
+                'Capitol St exit ramp closed. Continue straight on Leon Sullivan Way. Turn right onto Washington St E. Continue on Washington St E. Turn right on Dickinson St.',
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Continue straight on Leon Sullivan Way.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Turn right onto Washington St E.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Continue on Washington St. Turn right on Dickinson St. Continue to Christopher St.',
+                },
+            ],
+        },
+        24: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Leon Sullivan exit ramp closed. Take Capitol St ramp. Continue on Christopher St and take a left on Capitol St. Continue to Lee St.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription:
+                        'Continue on Christopher St and take a left on Capitol St. Continue to Lee St.',
+                },
+            ],
+        },
+        25: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Brooks St ramp to I-64W/I-77N/I-79/Parkersburg/Huntington closed. Continue on Brooks St. Turn left on Smith St. Continue on Smith St. Turn left onto Smith St Ramp.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Continue on Brooks St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Turn left on Smith St. Continue on Smith St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Turn left onto Smith St Ramp.',
+                },
+            ],
+        },
+
+        27: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Brooks St ramp to I-64W/I-77S/Beckley closed. Turn right on Washington St E. Continue on Washington St E. Turn left onto Greenbrier St. Take the I-64E/I-77 ramp.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Turn right on Washington St E.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Continue on Washington St E. Turn left onto Greenbrier St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Continue on Greenbrier St. Take the I-64E/I-77 ramp.',
+                },
+            ],
+        },
+        29: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Brooks St ramp closed. For I-64W/I-77S/Beckley turn right on Washington St E. Continue on Washington St E. Turn left onto Greenbrier St. Take the I-64E/I-77 ramp. For I-64W/I-77N/I-79/Parkersburg/Huntington continue on Brooks St. Turn left on Smith St. Continue on Smith St. Turn left onto Smith St Ramp.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Continue on Brooks St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Turn left on Smith St. Continue on Smith St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'Turn left onto Smith St Ramp.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseDescription: 'Turn right on Washington St E.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseDescription: 'Continue on Washington St E. Turn left onto Greenbrier St.',
+                },
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 2',
+                    carouselPhaseDescription: 'Continue on Greenbrier St. Take the I-64E/I-77 ramp.',
+                },
+            ],
+        },
+        33: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `I-77S left lane of ramp to I-64E/I-77S/Beckley closed.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77S right lane closed before and after Brooks St Ramp.',
+                },
+            ],
+        },
+        26: {
+            detourImageSrc: 'images/detourPhaseImg.png',
+            phaseDescriptionInnerHTML: `Brooks St ramp to I-64W/I-77S/Beckley closed. Turn right on Washington St E. Continue on Washington St E. Turn left onto Greenbrier St. Take the I-64E/I-77 ramp.`,
+            slides: [
+                {
+                    carouselImgSrc: 'images/detourPhaseImg.png',
+                    carouselPhaseTitle: 'Detour 1',
+                    carouselPhaseDescription: 'I-77S right lane closed before and after Brooks St Ramp.',
+                },
+            ],
         },
     };
 
@@ -458,7 +759,7 @@ require([
                     </div>
 
                     <div class="description-box">
-                        <h6>${content ? content.phaseHeaderInnerHTML : `Phase: ${phaseNumber}`}</h6>
+                        <h6>Phase: ${phaseNumber}</h6>
                             <p class="description">
                                 ${
                                     content
