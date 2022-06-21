@@ -1,13 +1,10 @@
 require([
-    'esri/core/watchUtils',
     'esri/Map',
     'esri/views/MapView',
     'esri/layers/FeatureLayer',
-    'esri/widgets/LayerList',
     'esri/request',
     'esri/widgets/Legend',
-    'esri/PopupTemplate',
-], (watchUtils, Map, MapView, FeatureLayer, LayerList, esriRequest, Legend, PopupTemplate) => {
+], (Map, MapView, FeatureLayer, esriRequest, Legend) => {
     const currentPhase = 0;
     const map = new Map({
         basemap: 'gray-vector',
@@ -515,82 +512,6 @@ require([
         },
     };
 
-    function defineActions(event) {
-        // The event object contains an item property.
-        // is is a ListItem referencing the associated layer
-        // and other properties. You can control the visibility of the
-        // item, its title, and actions using this object.
-
-        const item = event.item;
-
-        if (item.title === 'Phase 1') {
-            // An array of objects defining actions to place in the LayerList.
-            // By making this array two-dimensional, you can separate similar
-            // actions into separate groups with a breaking line.
-            // const thisDiv = document.getElementById('contentBox');
-            // const popupBox = `<div id="popupLayer">
-            //     <div>Title</div>
-            //     <p>Something will go in this spot about the layers</p>
-            //     <img src="https://www.state.nj.us/transportation/commuter/motoristassistance/images/geico3.jpg"></img>
-            // </div>`;
-            // div.innerHTML(popupBox);
-            // item.actionsSections = [
-            //     [
-            //         {
-            //             title: 'Go to full extent',
-            //             className: 'esri-icon-zoom-out-fixed',
-            //             id: 'full-extent',
-            //         },
-            //         {
-            //             title: 'Layer information',
-            //             className: 'esri-icon-description',
-            //             id: 'information',
-            //         },
-            //     ],
-            //     [
-            //         {
-            //             title: 'Increase opacity',
-            //             className: 'esri-icon-up',
-            //             id: 'increase-opacity',
-            //         },
-            //         {
-            //             title: 'Decrease opacity',
-            //             className: 'esri-icon-down',
-            //             id: 'decrease-opacity',
-            //         },
-            //     ],
-            // ];
-        }
-
-        // Adds a slider for updating a group layer's opacity
-        // if (item.children.length > 1 && item.parent) {
-        //     const slider = new Slider({
-        //         min: 0,
-        //         max: 1,
-        //         precision: 2,
-        //         values: [1],
-        //         visibleElements: {
-        //             labels: true,
-        //             rangeLabels: true,
-        //         },
-        //     });
-        // }
-    }
-    function addUIControls() {
-        const layerList = new LayerList({
-            view: view,
-            listItemCreatedFunction: defineActions,
-        });
-        const legend = new Legend({
-            view: view,
-        });
-
-        const selectorMenu = new SelectorMenu(document.querySelector('.esri-ui-top-right.esri-ui-corner'));
-
-        view.ui.add(legend, 'bottom-right');
-        // view.ui.add(layerList, 'top-right');
-        addLayers(selectorMenu);
-    }
     function visibilityWatchHandler(newValue, oldValue, attribute, target) {
         if (target.infoPopup) {
             target.infoPopup.visible = newValue;
@@ -855,6 +776,13 @@ require([
     }
 
     view.when(() => {
-        addUIControls(view);
+        const legend = new Legend({
+            view: view,
+        });
+
+        const selectorMenu = new SelectorMenu(document.querySelector('.esri-ui-top-right.esri-ui-corner'));
+
+        view.ui.add(legend, 'bottom-right');
+        addLayers(selectorMenu);
     });
 });
