@@ -570,12 +570,12 @@ require([
             description: `Court Street closed between Donnally St and Smith St. Continue on Donnally St and turn left onto Capitol St. Turn left onto Smith St.`,
             slides: [
                 {
-                    image: 'images/Phase-41-detour-1.jpg',
+                    image: 'images/Phase-41-detour-2.jpg',
                     title: 'Detour 1',
                     description: 'Continue on Donnally St and turn left onto Capitol St.',
                 },
                 {
-                    image: 'images/Phase-41-detour-2.jpg',
+                    image: 'images/Phase-41-detour-3.jpg',
                     title: 'Detour 2',
                     description: 'Turn left onto Smith St.',
                 },
@@ -586,17 +586,17 @@ require([
             description: `Smith St closed between Eagan St and On-Ramp to I-77N. Turn left onto Eagan St. Turn right onto Donnally St. Turn right on Court St.`,
             slides: [
                 {
-                    image: 'images/Phase-42-detour-1.jpg',
+                    image: 'images/Phase-42-detour-2.jpg',
                     title: 'Detour 1',
                     description: 'Turn left onto Eagan St.',
                 },
                 {
-                    image: 'images/Phase-42-detour-2.jpg',
+                    image: 'images/Phase-42-detour-3.jpg',
                     title: 'Detour 2',
                     description: 'Turn right onto Donnally St.',
                 },
                 {
-                    image: 'images/Phase-42-detour-3.jpg',
+                    image: 'images/Phase-42-detour-4.jpg',
                     title: 'Detour 3',
                     description: 'Turn right on Court St.',
                 },
@@ -607,17 +607,17 @@ require([
             description: `Piedmont Rd closed between Morris St and Slack St. Take Morris St and turn right on Smith St. Continue on Smith St then turn right onto Court St. Turn right onto Piedmont Rd.`,
             slides: [
                 {
-                    image: 'images/Phase-43-detour-1.jpg',
+                    image: 'images/Phase-43-detour-2.jpg',
                     title: 'Detour 1',
                     description: 'Take Morris St and turn right on Smith St.',
                 },
                 {
-                    image: 'images/Phase-43-detour-2.jpg',
+                    image: 'images/Phase-43-detour-3.jpg',
                     title: 'Detour 2',
                     description: 'Continue on Smith St then turn right onto Court St.',
                 },
                 {
-                    image: 'images/Phase-43-detour-3.jpg',
+                    image: 'images/Phase-43-detour-4.jpg',
                     title: 'Detour 3',
                     description: 'Turn right onto Piedmont Rd.',
                 },
