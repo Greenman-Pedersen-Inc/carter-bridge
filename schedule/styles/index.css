@@ -425,6 +425,7 @@ object {
 
 #viewDiv {
     height: 85vh;
+    padding: 1em;
 }
 
 #informationBox {
