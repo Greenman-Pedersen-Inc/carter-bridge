@@ -2,7 +2,7 @@
     height: 10vh;
     /* background: linear-gradient(271deg, rgb(0 47 96) 0%, rgb(0, 57, 136) 100%); */
     /* margin-bottom: auto; */
-    background-image: url(../images/gradient-banner.png);
+    background-image: url(../images/gradient-banner.jpg);
     background-position: right;
 }
 .navbar-inner {
