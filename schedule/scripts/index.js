@@ -4,9 +4,29 @@ const phaseInfoURL =
 window.onload = function () {
     require(['esri/request'], (esriRequest) => {
         esriRequest(phaseInfoURL).then(function (response) {
+            function changeTimezone(date, ianatz) {
+                // suppose the date is 12:00 UTC
+                var invdate = new Date(
+                    date.toLocaleString('en-US', {
+                        timeZone: ianatz,
+                    })
+                );
+
+                // then invdate will be 07:00 in Toronto
+                // and the diff is 5 hours
+                var diff = date.getTime() - invdate.getTime();
+
+                // so 12:00 in Toronto is 17:00 UTC
+                return new Date(date.getTime() - diff); // needs to substract
+            }
+
             const calendarData = response.data.features.map((element) => {
-                let startDate = new Date(element.attributes.StartDate);
-                let endDate = new Date(element.attributes.EndDate);
+                let startDate = changeTimezone(new Date(element.attributes.StartDate), 'Europe/London');
+                let endDate = changeTimezone(new Date(element.attributes.EndDate), 'Europe/London');
+
+                // var there = changeTimezone(startDate, 'Europe/London');
+
+                // console.log(`Here: ${startDate.toString()}\nToronto: ${there.toString()}`);
 
                 return {
                     title: element.attributes.Title,

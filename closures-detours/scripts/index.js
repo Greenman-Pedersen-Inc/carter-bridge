@@ -9,7 +9,16 @@ require([
     const phaseInformationLayer =
         'https://services1.arcgis.com/VLhaRwzp3uCQMr7y/ArcGIS/rest/services/mdx_2200023_00_Closures_20220426_PublicView/FeatureServer/0/query?where=1=1&f=json&outFields=*&returnGeometry=false';
     const map = new Map({
-        basemap: 'gray-vector',
+        // basemap: 'satellite',
+        basemap: 'hybrid',
+        // basemap: 'osm',
+        // basemap: 'dark-gray-vector',
+        // basemap: 'gray-vector',
+        // basemap: 'streets-vector',
+        // basemap: 'streets-night-vector',
+        // basemap: 'streets-navigation-vector',
+        // basemap: 'topo-vector',
+        // basemap: 'streets-relief-vector',
     });
     const view = new MapView({
         container: 'viewDiv',
@@ -692,10 +701,24 @@ require([
 
             existingPhases.forEach((phase, index) => {
                 if (phase !== null) {
+                    // let renderer = {
+                    //     type: 'simple', // autocasts as new SimpleRenderer()
+                    //     symbol: {
+                    // type: 'simple-fill', // autocasts as new SimpleFillSymbol()
+                    // color: [255, 128, 0, 0.5],
+                    // outline: {
+                    //     // autocasts as new SimpleLineSymbol()
+                    //     width: 1,
+                    //     color: 'white',
+                    // },
+                    //     },
+                    // };
+
                     let layer = new FeatureLayer({
                         url: `https://services1.arcgis.com/VLhaRwzp3uCQMr7y/ArcGIS/rest/services/mdx_2200023_00_Closures_20220426_PublicView/FeatureServer/0/`,
                         title: `Phase ${phase}`,
                         visible: false,
+                        // renderer: renderer,
                         definitionExpression: `phase = ${phase}`,
                         popupTemplate: {
                             title: '{Name}',
@@ -719,6 +742,10 @@ require([
                                 },
                             ],
                         },
+                    });
+
+                    layer.once('loaded', (event) => {
+                        console.log(layer.renderer);
                     });
 
                     if (phasesSelected.length > 0) {
