@@ -10,13 +10,6 @@ body {
     align-items: center;
 }
 
-.carousel-inner {
-    height: 100%;
-    width: auto;
-    display: flex;
-    align-items: center;
-}
-
 .carousel-image {
     height: 85vh;
     background-position: center;
@@ -33,7 +26,8 @@ body {
     text-align: left;
     width: clamp(300px, 80vw, 600px);
     background-color: rgba(255, 255, 255, 0.75);
-    left: 10vw;
+    left: unset;
+    right: 10vw;
     margin: auto 0;
     top: clamp(600px, 40vw, 185px);
     bottom: clamp(185px, 40vw, 600px);
