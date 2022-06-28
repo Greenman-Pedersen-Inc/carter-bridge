@@ -1,0 +1,33 @@
+.footer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    height: 5vh;
+    border-top: 1px solid black;
+    /* background: linear-gradient(271deg, rgb(0 47 96) 0%, rgb(0, 57, 136) 100%); */
+    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: url(../images/gradient-banner-flipped-fancy.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #003782;
+}
+.footer-inner {
+    text-align: center;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer p {
+    font-size: calc(0.5rem + 0.5vw);
+}
+
+.copyright {
+    width: 100%;
+    text-align: left;
+    color: white;
+    background: linear-gradient(270deg, transparent, rgba(255, 255, 255, 0.2) 100%);
+    padding: 0.3em 0 0.3em 0.5em;
+}
