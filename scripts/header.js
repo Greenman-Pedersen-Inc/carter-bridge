@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const nav = `<div class="navbar-wrapper">
         <div class="navbar-content">
         <a href="..">
-        <img src="/carter-bridge/images/transportationlogo.png">
+        <img src="/sandbox/images/transportationlogo.png">
         </a>
         <span class="welcome-box"><h1 class="welcome-title">${title}</h1></span>
         </div>
