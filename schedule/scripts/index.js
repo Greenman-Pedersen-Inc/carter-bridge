@@ -40,8 +40,6 @@ window.onload = function () {
                 };
             });
 
-            console.log(calendarData);
-
             const calendarEl = document.getElementById('viewDiv');
             const calendar = new FullCalendar.Calendar(calendarEl, {
                 themeSystem: 'bootstrap5',

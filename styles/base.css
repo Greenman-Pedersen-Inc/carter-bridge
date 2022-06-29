@@ -82,6 +82,7 @@ h4 {
 }
 
 .body-content {
+    height: 85vh;
     display: flex;
     align-items: center;
 }
