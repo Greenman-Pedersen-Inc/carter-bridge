@@ -72,7 +72,7 @@
         },
         2: {
             image: 'images/Phase-2.jpg',
-            description: `I-77S left lane of ramp to I-64E/I-77S/Beckley closed.</p>`,
+            description: `I-77S left lane of ramp to I-64E/I-77S/Beckley closed.`,
             slides: [
                 {
                     image: 'images/Phase-2.jpg',
