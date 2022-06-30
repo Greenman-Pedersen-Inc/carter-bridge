@@ -120,7 +120,7 @@ h4 {
     float: left;
     text-align: left;
     width: 100%;
-    background-image: linear-gradient(to left, rgba(255, 0, 0, 0), #ffd512);
+    background-image: linear-gradient(to left, rgba(19, 55, 105, 0.25), #ffd512);
     padding: 5px 0 5px 10px;
 }
 .block-title a {
