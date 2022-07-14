@@ -30,14 +30,31 @@
         0: {
             image: 'images/Phase-0.jpg',
             title: 'Current Phase',
-            description:
-                'Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.',
+            description: `Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open. 
+                <br>
+                <br>
+                Willow Street Closed. Continue on Pennsylvania Ave. Turn left onto Bigley Avenue then slight left to continue on Bigley Avenue.`,
             slides: [
                 {
                     image: 'images/Phase-0.jpg',
-                    title: 'Detour 1',
+                    title: 'Closure',
                     description:
                         'Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.',
+                },
+                {
+                    image: 'images/Phase-40-detour-1.jpg',
+                    title: 'Detour 1',
+                    description: 'Continue on Pennsylvania Ave. Turn left onto Bigley Avenue.',
+                },
+                {
+                    image: 'images/Phase-40-detour-2.jpg',
+                    title: 'Detour 2',
+                    description: 'Slight left to continue on Bigley Avenue.',
+                },
+                {
+                    image: 'images/Phase-40-detour-3.jpg',
+                    title: 'Detour 3',
+                    description: 'Slight left to continue on Bigley Avenue.',
                 },
             ],
         },
@@ -272,19 +289,19 @@
             ],
         },
         18: {
-            image: 'images/Phase-18-detour-1.jpg',
+            image: 'images/Phase-18-detour-1.png',
             description: `Court Street on-ramp and right lane of I-77N/I-79/Parkersburg closed. Please take Brooks St Ramp for I-77N. Take Court St down to Lee St. Turn left onto Lee St. Turn left onto Brooks St and continue to take the ramp for I-77N.
                 <br>
                 <br>
                 Please click on the photo for more info`,
             slides: [
                 {
-                    image: 'images/Phase-18-detour-1.jpg',
+                    image: 'images/Phase-18-detour-2.png',
                     title: 'Detour 1',
                     description: 'Please take Brooks St Ramp for I-77N.',
                 },
                 {
-                    image: 'images/Phase-18-detour-2.jpg',
+                    image: 'images/Phase-18-detour-3.png',
                     title: 'Detour 1',
                     description:
                         'Take Court St down to Lee St. Turn left onto Lee St. Turn left onto Brooks St and continue to take the ramp for I-77N.',
