@@ -1,10 +1,10 @@
-﻿require([
-    'esri/Map',
-    'esri/views/MapView',
-    'esri/layers/FeatureLayer',
-    'esri/request',
-    'esri/widgets/Legend',
-], (Map, MapView, FeatureLayer, esriRequest, Legend) => {
+﻿require(['esri/Map', 'esri/views/MapView', 'esri/layers/FeatureLayer', 'esri/request', 'esri/widgets/Legend'], (
+    Map,
+    MapView,
+    FeatureLayer,
+    esriRequest,
+    Legend
+) => {
     const currentPhase = 0;
     const phaseInformationLayer =
         'https://services1.arcgis.com/VLhaRwzp3uCQMr7y/ArcGIS/rest/services/mdx_2200023_00_Closures_20220426_PublicView/FeatureServer/0/query?where=1=1&f=json&outFields=*&returnGeometry=false';
@@ -33,7 +33,10 @@
             description: `Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open. 
                 <br>
                 <br>
-                Willow Street Closed. Continue on Pennsylvania Ave. Turn left onto Bigley Avenue then slight left to continue on Bigley Avenue.`,
+                Willow Street Closed. Continue on Pennsylvania Ave. Turn left onto Bigley Avenue then slight left to continue on Bigley Avenue.
+                <br>
+                <br>
+                Please click on the photo for more info`,
             slides: [
                 {
                     image: 'images/Phase-0.jpg',
@@ -333,8 +336,7 @@
                 {
                     image: 'images/Phase-19-detour-4.jpg',
                     title: 'Detour 3',
-                    description:
-                        'Turn right onto Washington St E. Continue straight until Leon Sullivan Way.',
+                    description: 'Turn right onto Washington St E. Continue straight until Leon Sullivan Way.',
                 },
             ],
         },
@@ -361,8 +363,7 @@
                 {
                     image: 'images/Phase-21-detour-4.jpg',
                     title: 'Detour 3',
-                    description:
-                        'Turn right onto Washington St E and continue straight until Leon Sullivan Way.',
+                    description: 'Turn right onto Washington St E and continue straight until Leon Sullivan Way.',
                 },
             ],
         },
@@ -405,8 +406,7 @@
                 {
                     image: 'images/Phase-24-detour-2.jpg',
                     title: 'Detour 1',
-                    description:
-                        'Continue on Christopher St and take a left on Capitol St. Continue to Lee St.',
+                    description: 'Continue on Christopher St and take a left on Capitol St. Continue to Lee St.',
                 },
             ],
         },
@@ -591,8 +591,7 @@
                 {
                     image: 'images/Phase-38-detour-3.jpg',
                     title: 'Detour 4',
-                    description:
-                        'Turn right onto Washington St E. Continue straight until Leon Sullivan Way.',
+                    description: 'Turn right onto Washington St E. Continue straight until Leon Sullivan Way.',
                 },
             ],
         },
@@ -856,8 +855,7 @@
 
     function SelectorMenu(attachPoint) {
         this.domNode = document.createElement('div');
-        this.domNode.className =
-            'esri-component esri-layer-list esri-widget esri-widget--panel phase-selection';
+        this.domNode.className = 'esri-component esri-layer-list esri-widget esri-widget--panel phase-selection';
 
         const selectorDescription = document.createElement('p');
         selectorDescription.className = 'my-2 fw-bold';
