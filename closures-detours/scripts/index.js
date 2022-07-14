@@ -36,7 +36,7 @@
                 Willow Street Closed. Continue on Pennsylvania Ave. Turn left onto Bigley Avenue then slight left to continue on Bigley Avenue.
                 <br>
                 <br>
-                Please click on the photo for more info`,
+                Please click on the photo for more info.`,
             slides: [
                 {
                     image: 'images/Phase-0.jpg',
@@ -956,12 +956,12 @@
         });
 
         menuRoot.innerHTML = `
-                <div class="phase-form-content">
-                    <div class="phase-picture">
+                <div class="phase-form-content row">
+                    <div class="phase-picture col-6">
                         <img src="${content ? content.image : ''}"></img>
                     </div>
 
-                    <div class="description-box">
+                    <div class="description-box col-6">
                         <h6>Phase: ${phaseNumber}</h6>
                             <p class="description">
                                 ${
