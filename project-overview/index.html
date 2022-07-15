@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="../styles/base.css" />
+        <link rel="stylesheet" href="styles/index.css" />
+        <link rel="stylesheet" href="../styles/header.css" />
+        <link rel="stylesheet" href="../styles/footer.css" />
+
+        <title>Project Overview</title>
+    </head>
+
+    <body>
+        <nav role="navigation" class="navbar-container"></nav>
+
+        <div id="photo-carousel" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#photo-carousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#photo-carousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#photo-carousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                ></button>
+                <button
+                    type="button"
+                    data-bs-target="#photo-carousel"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"
+                ></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-image" style="background-image: url(images/bridge-1.jpg)"></div>
+                    <div class="carousel-caption">
+                        <h1>Site and Surrounding Area</h1>
+                        <p>
+                            The Carter Bridge/Brooks Street Interchange Project, funded by the West Virginia
+                            Division of Highways, is a bridge painting and repair project of fifteen (15)
+                            bridges on the I-77/I-64 corridor in Charleston, WV. The project footprint
+                            includes the bridges associated with the I-77/I-64 interchange (Bigley Ave.
+                            bridges/ramps) on the north side of downtown Charleston and stretches east across
+                            the Elk River and Kanawha Valley Railroad to the I-77/I-64 ramps for Leon Sullivan
+                            Way and Brooks Street.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image" style="background-image: url(images/bridge-2.3.jpg)"></div>
+                    <div class="carousel-caption">
+                        <h1>Contract</h1>
+                        <p>
+                            The project was let on the February 8th, 2022, WVDOH Project Letting for a price
+                            of $27,420,996.50 to Blastech Enterprises, Inc. from Baltimore, MD. The project
+                            was officially awarded on March 1, 2022, and the contractor was given the Notice
+                            to Proceed on March 21, 2022. The Carter Bridge/Brooks Street Interchange is
+                            expected to be performed over the next 20 months with an original contract
+                            completion date of November 17, 2023.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image" style="background-image: url(images/bridge-3.jpg)"></div>
+                    <div class="carousel-caption">
+                        <h1>Site History</h1>
+                        <p>
+                            The original bridges were built in the early 1970’s and are due for maintenance to
+                            keep them functioning properly, extending their useful lifespan for years to come.
+                            In addition to cleaning and painting the structural steel of the fifteen (15)
+                            bridges, the project will make various improvements to the existing bridges that
+                            include: concrete crack and spall repairs, concrete protective coating, bolt
+                            replacements, repair and cleaning of bridge drainage, bridge joint cleaning,
+                            access door repairs, parapet plate armoring, fence replacement, electrical and
+                            lighting repairs, and erosion repairs. The existing pedestrian bridge over
+                            I-77/I-64 and staircases will be removed as part of the project.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image" style="background-image: url(images/bridge-4.jpg)"></div>
+                    <div class="carousel-caption">
+                        <h1>Work and Closures</h1>
+                        <p>
+                            With the majority of the project work to be performed underneath the bridges, the
+                            traveling public should expect various roadway closures and detours to local
+                            streets as well as partial closures to parking lots under the bridges associated
+                            with the project. Additionally, nightly lane closures and various ramp closures
+                            along the I-77/I-64 corridor will occur within the project limits.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#photo-carousel"
+                data-bs-slide="prev"
+            >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#photo-carousel"
+                data-bs-slide="next"
+            >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <footer class="footer"></footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+        <script src="../scripts/header.js"></script>
+        <script src="../scripts/footer.js"></script>
+    </body>
+</html>
+<style></style>

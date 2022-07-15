@@ -1,0 +1,22 @@
+{
+  "name": "carter-bridge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Greenman-Pedersen-Inc/carter-bridge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Greenman-Pedersen-Inc/carter-bridge/issues"
+  },
+  "homepage": "https://github.com/Greenman-Pedersen-Inc/carter-bridge#readme",
+  "dependencies": {
+    "fullcalendar": "^5.11.0"
+  }
+}
