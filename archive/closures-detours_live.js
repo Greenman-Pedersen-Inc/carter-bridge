@@ -175,7 +175,7 @@ require([
                     carouselImgSrc: 'detour1.png',
                     carouselPhaseTitle: 'Detour 1',
                     carouselPhaseDescription:
-                        'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
+                        'Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.',
                 },
                 {
                     carouselImgSrc: 'detour2.png',
@@ -205,7 +205,7 @@ require([
             Please click the image for more information on the detour.`,
             slides: [
                 {
-                    carouselImgSrc: 'detour1.png',
+                    carouselImgSrc: 'detourPhaseImg.png',
                     carouselPhaseTitle: 'Detour 1',
                     carouselPhaseDescription:
                         'Washington Street On-Ramp closed. Please continue on Pennsylvania Avenue to Bigley Avenue.',
@@ -281,7 +281,6 @@ require([
                                         }
                                         <br>
                                         <br>
-                                        Please click the image for more information on the detour.
                                     </p>
                                 </div>
                             </div>
@@ -328,7 +327,7 @@ require([
         //     addLayers('allFuture');
         // }
         addLayers(event.target.value);
-        console.log('clear widget stuff for phase');
+        // console.log('clear widget stuff for phase');
         map.remove();
     });
 
@@ -341,7 +340,7 @@ require([
                 title: 'Current Phase',
                 popupTemplate: {
                     // autocasts as new PopupTemplate()
-                    title: '{name}',
+                    title: 'Current Phase',
                     content: '{comments}',
                     // Set content elements in the order to display.
                     // The first element displayed here is the fieldInfos.
@@ -352,7 +351,11 @@ require([
                             // sentence giving the total amount of trees value within a
                             // specified census block. Text elements can only be set within the content.
                             type: 'text', // TextContentElement
-                            text: 'Can have more details here about the phase and detours etc.....',
+                            text: `Phase 1 Closure. Washington Street On-Ramp Closed and right lane closure on I-64E.
+                            <br>
+                            <br>
+                            Detour: Take Pennsylvania Avenue to Bigley Avenue and then turn left onto Westmoreland Road. Either turn right to Odell Avenue On-Ramp to continue on I-77N or turn left onto Crescent Road On-Ramp to continue on I-77S.
+                            `,
                         },
                         {
                             type: 'media', // MediaContentElement
@@ -383,7 +386,7 @@ require([
             esriRequest(
                 'https://services1.arcgis.com/VLhaRwzp3uCQMr7y/ArcGIS/rest/services/mdx_2200023_00_Closures_20220426_PublicView/FeatureServer/0/query?where=1=1&f=json&outFields=*&returnGeometry=false'
             ).then(function (response) {
-                console.log(response);
+                // console.log(response);
 
                 //     const carouselContainer = document.getElementById('carousel-contaier');
                 //     let newSlideNumberTwo = document.createElement('div');
@@ -525,7 +528,7 @@ require([
                         }
 
                         function visibilityWatchHandler(newValue, oldValue, property, target) {
-                            console.log(phase, newValue);
+                            // console.log(phase, newValue);
 
                             if (layer.infoPopup) {
                                 layer.infoPopup.visible = newValue;

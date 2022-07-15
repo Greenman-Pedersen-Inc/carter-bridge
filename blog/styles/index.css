@@ -1,10 +1,5 @@
-body {
-    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-#viewDiv {
-    height: 85vh;
-    /* overflow-y: auto; */
+.img-fluid{
+    height: 100% !important;
 }
 .esri-view-height-less-than-medium .esri-popup__main-container {
     max-height: unset;
