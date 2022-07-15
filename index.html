@@ -1,119 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="styles/base.css" />
-        <link rel="stylesheet" href="styles/header.css" />
-        <link rel="stylesheet" href="styles/footer.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <style>
-            .timeline-Footer.u-cf {
-                display: none !important;
-            }
-        </style>
-        <title>Welcome to the Carter Bridge / Brooks St Interchange Project Portal​</title>
-    </head>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
 
-    <body>
-        <div class="contain-all">
-            <nav role="navigation" class="navbar-container"></nav>
-            <main class="container pt-2 body-content">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="row mb-4">
-                            <div class="col-6 col-lg-4 col-md-6 mw">
-                                <div class="block">
-                                    <span class="block-title"
-                                        ><a href="project-overview">Project Overview</a></span
-                                    >
-                                    <a href="project-overview">
-                                        <img class="img-fluid icons" src="images/project-overview.jpg" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-4 col-md-6 mw">
-                                <div class="block">
-                                    <span class="block-title"
-                                        ><a href="closures-detours/">Closures and Detours</a></span
-                                    >
-                                    <a href="closures-detours/">
-                                        <img class="img-fluid icons" src="images/closures-detours.jpg" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-4 col-md-6 mw">
-                                <div class="block">
-                                    <span class="block-title"><a href="video-feeds/">Video Feeds</a></span>
-                                    <a href="video-feeds/">
-                                        <img class="img-fluid icons" src="images/video-feed.jpg" />
-                                    </a>
-                                </div>
+    <style>
+        .timeline-Footer.u-cf {
+            display: none !important;
+        }
+    </style>
+    <title>Welcome to the Carter Bridge / Brooks St Interchange Project Portal​</title>
+</head>
+
+<body>
+    <div class="contain-all">
+        <nav role="navigation" class="navbar-container"></nav>
+        <main class="container pt-2 body-content">
+            <div class="row align-center">
+                <div class="col-md-8">
+                    <div class="row mb-4">
+                        <div class="col-6 col-lg-4 col-md-6 mw">
+                            <div class="block">
+                                <span class="block-title"><a href="project-overview">Project Overview</a></span>
+                                <a href="project-overview">
+                                    <img class="img-fluid icons" src="images/project-overview.jpg" />
+                                </a>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6 col-lg-4 col-md-6 mw">
-                                <div class="block">
-                                    <span class="block-title"><a href="schedule/">Work Schedule</a></span>
-                                    <a href="schedule/">
-                                        <img class="img-fluid icons" src="images/work-schedule.jpg" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-4 col-md-6 mw">
-                                <div class="block">
-                                    <span class="block-title"><a href="blog">Blog</a></span>
-                                    <a href="blog">
-                                        <img class="img-fluid icons" src="images/blog.jpg" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-4 col-md-6 mw">
-                                <div class="block">
-                                    <span class="block-title"><a href="photo-map">Photo Map</a></span>
-                                    <a href="photo-map">
-                                        <img class="img-fluid icons" src="images/photo-map.jpg" />
-                                    </a>
-                                </div>
+                        <div class="col-6 col-lg-4 col-md-6 mw">
+                            <div class="block">
+                                <span class="block-title"><a href="closures-detours/">Closures and Detours</a></span>
+                                <a href="closures-detours/">
+                                    <img class="img-fluid icons" src="images/closures-detours.jpg" />
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <a
-                            class="twitter-timeline"
-                            href="https://twitter.com/CarterBrooksIC"
-                            data-width="100%"
-                            data-height="711"
-                            data-chrome="nofooter transparent"
-                        >
-                            Tweets by @TwitterDev
-                        </a>
-                        <div class="footer-inner">
-                            Follow <a href="https://twitter.com/CarterBrooksIC">CarterBrooksIC</a> for project
-                            updates
+                        <div class="col-6 col-lg-4 col-md-6 mw">
+                            <div class="block">
+                                <span class="block-title"><a href="video-feeds/">Video Feeds</a></span>
+                                <a href="video-feeds/">
+                                    <img class="img-fluid icons" src="images/video-feed.jpg" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-4 col-md-6 mw">
+                            <div class="block">
+                                <span class="block-title"><a href="schedule/">Work Schedule</a></span>
+                                <a href="schedule/">
+                                    <img class="img-fluid icons" src="images/work-schedule.jpg" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-4 col-md-6 mw">
+                            <div class="block">
+                                <span class="block-title"><a href="blog">Blog</a></span>
+                                <a href="blog">
+                                    <img class="img-fluid icons" src="images/blog.jpg" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-4 col-md-6 mw">
+                            <div class="block">
+                                <span class="block-title"><a href="photo-map">Photo Map</a></span>
+                                <a href="photo-map">
+                                    <img class="img-fluid icons" src="images/photo-map.jpg" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </main>
-            <footer class="footer"></footer>
-        </div>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"
-        ></script>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <script src="scripts/index.js"></script>
-        <script src="scripts/header.js"></script>
-        <script src="scripts/footer.js"></script>
-    </body>
+                <div class="col-md-4">
+                    <a class="twitter-timeline" href="https://twitter.com/CarterBrooksIC" data-width="100%"
+                        data-height="711" data-chrome="nofooter transparent">
+                        Tweets by @TwitterDev
+                    </a>
+                    <div class="footer-inner">
+                        Follow <a href="https://twitter.com/CarterBrooksIC">CarterBrooksIC</a> for project
+                        updates
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/header.js"></script>
+    <script src="scripts/footer.js"></script>
+</body>
+
 </html>
