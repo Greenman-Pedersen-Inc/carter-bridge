@@ -26,11 +26,12 @@
         center: [-81.63211, 38.35822], //Longitude, latitude
         zoom: 16,
     });
+    let negativePhase = -1;
     const phaseInformation = {
-        0: {
+        '-1': {
             image: 'images/Phase-0.jpg',
             title: 'Current Phase',
-            description: `Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open. 
+            description: `Left lane of Pennsylvania Avenue is closed. Please use the middle and right lane to proceed. Pennsylvania Avenue On-Ramp to I-64E is open.
                 <br>
                 <br>
                 Willow Street Closed. Continue on Pennsylvania Ave. Turn left onto Bigley Avenue then slight left to continue on Bigley Avenue.
@@ -58,6 +59,18 @@
                     image: 'images/Phase-40-detour-3.jpg',
                     title: 'Detour 3',
                     description: 'Slight left to continue on Bigley Avenue.',
+                },
+            ],
+        },
+        0: {
+            image: 'images/Phase-45.png',
+            description: `The Leon Sullivan Way pedestrian bridge to Sunset Drive closed for demolition starting 1/11/2023 until further notice.`,
+            slides: [
+                {
+                    image: 'images/Phase-45.png',
+                    title: 'Closure',
+                    description:
+                        'The Leon Sullivan Way pedestrian bridge to Sunset Drive closed for demolition starting 1/11/2023 until further notice.',
                 },
             ],
         },
